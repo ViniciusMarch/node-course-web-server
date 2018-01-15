@@ -1,8 +1,8 @@
 const express = require('express');
 const hbs = require('hbs');
-
 const fs = require('fs');
 
+const port = process.env.PORT || 3000;
 //criando o servidor
 var app = express();
 
@@ -68,6 +68,6 @@ app.get('/bad', (req, res) => {
 //res -> açoes de reseposta (rever no site)
 
 //Fazendo o servidor escutar
-app.listen(3000, () => {
-  console.log('Server listening from port 3000');
+app.listen(port, () => {
+  console.log(`Server listening from port ${port}`);
 });
