@@ -38,6 +38,10 @@ hbs.registerHelper('screamIt', (text) => {
   return text.toUpperCase();
 });
 
+hbs.registerHelper('likes', () => {
+  return ['Women', ' Stories', ' Travel'];
+});
+
 
 //configurações
 //Um handler, que executa a funçao do segundo argumento, quando a url do primeiro argumento for acessada
@@ -45,8 +49,8 @@ app.get('/', (req, res) => {
   // res.send("<h1>Hello, Express!</h1>");
   res.render('home.hbs', {
     pageTitle: 'Home Page',
-    welcomeText: 'Welcome to my first node website!!',
-    likes: ['Women', ' Stories', ' Travel']
+    welcomeText: 'Welcome to my first node website!!'
+    //likes: ['Women', ' Stories', ' Travel']
   });
 });
 
@@ -56,6 +60,11 @@ app.get('/about', (req, res) => {
   })
 });
 
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: "Portifolio"
+  })
+});
 
 //metodo get
 app.get('/bad', (req, res) => {
